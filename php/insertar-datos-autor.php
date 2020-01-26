@@ -2,7 +2,7 @@
   include 'conexion.php';
 
   if(isset($_POST['Patente'])){
-    $Patente= $_POST['Patente'];
+    $Patente= $_POST['PatenteA'];
     $NombreA = $_POST['NombreA'];
     $ApellidoPA = $_POST['ApellidoPA'];
     $ApellidoMA = $_POST['ApellidoMA'];
@@ -14,8 +14,9 @@
     $PaisA= $_POST['PaisA'];
 
     $queryinsertarformularioAutor = "INSERT INTO Autores (Patente,Nombre,ApellidoP,ApellidoM,Direccion1,Direccion2,Ciudad,Estado,CP,Pais)
-    VALUES('$Patente','$Nombre', '$ApellidoP','$ApellidoM','$Direccion1','$Direccion2','$Ciudad','$Estado',$CP,'$Pais')";
+    VALUES('$PatenteA','$NombreA', '$ApellidoPA','$ApellidoMA','$Direccion1A','$Direccion2A','$CiudadA','$EstadoA',$CPA,'$PaisA')";
     mysqli_query($conn, $queryinsertarformularios);
+
     echo "Autor Registrado";
   }else {
   echo  'Error, Introduzca Patente';

@@ -112,6 +112,8 @@ $(document).ready(function () {
     });
 
     //Formulario cesion
+
+    /*-------------------------------------------------------------------------------
     $('#Cesion').change(function(event) {
         if($('#Cesion').val()== "Si"){
           htmlformAss()
@@ -123,6 +125,7 @@ $(document).ready(function () {
 
         }
     });
+    ---------------------------------------------------------------------------------------*/
 
     //Inicializacion JSON para almacenar Datos Autores
       var datosAutor = [];
@@ -148,14 +151,16 @@ $(document).ready(function () {
         });
         //Cierre PUSH
         //AJAX metodo POST Envio de datos
-        $.post('php/insertar-datos.php', datosAutor[(i-1)], function(response) {
+        $.post('php/insertar-datos-autor.php', datosAutor[(i-1)], function(response) {
           console.log(response);
         });//Cierre POST AJAX
       }//Cierre FOR
 
+      //Insertar Datos de patentes
+
       //Insertar Tabla Representante Legal
       if ($('#RepresentanteLegal').val()== "No") {
-        $.post('php/insertar-datos.php', datosAutor[0], function(response) {
+        $.post('php/insertar-datos-rep.php', datosAutor[0], function(response) {
           console.log(response);
         });
       }
@@ -172,14 +177,14 @@ $(document).ready(function () {
           'CPRL':$('#CPRep').val(),
           'PaisRL':$('#PaisRep').val()
         });
-        $.post('php/insertar-datos.php', datosRepLeg[0], function(response) {
+        $.post('php/insertar-datos-rep.php', datosRepLeg[0], function(response) {
           console.log(response);
         });
       }
       //Insertar Datos Cesionario
       if($('#Cesion')=="Si"){
         datosCes.push({
-          'Patente': $('#NomPatente').val(),
+          'PatenteC': $('#NomPatente').val(),
           'NombreC': $('#NombreCes').val(),
           'ApellidoPC': $('#ApellidoPCes').val(),
           'ApellidoMC': $('#ApellidoMCes').val(),
@@ -190,12 +195,23 @@ $(document).ready(function () {
           'CPC':$('#CPCes').val(),
           'PaisC':$('#PaisCes').val()
         });
-        $.post('php/insertar-datos.php', datosCes[0], function(response) {
+        $.post('php/insertar-datos-cesionario.php', datosCes[0], function(response) {
          console.log(response);
         });
       }
 
-      console.log($('input:radio[name=TipoEntidad]:checked').val());
+      //Insertar Datos Patente
+      datosPatente.push({
+        'Patente': $('#NomPatente').val(),
+        'NumAutores': $('#NumAutores').val(),
+        'PaisAplicacion': $('#PaisAplicacion').val(),
+        'TipoEntidad': $('input:radio[name=TipoEntidad]:checked').val(),
+        'TipoPatentente': $('#TipoPatentente').val(),
+        'TipoAplicacion': $('#TipoAplicacion').val()
+      });
+      $.post('php/insertar-datos-patente.php', datosPatente[0], function(response) {
+       console.log(response);
+      });
 
     });//Ciere FORM SUBMIT
 
