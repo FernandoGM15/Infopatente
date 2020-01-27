@@ -111,8 +111,17 @@ $(document).ready(function () {
       }
     });
 
+    $('input:radio[name=Cesion]').change(function(event) {
+      if($('input:radio[name=Cesion]:checked').val()== "Si"){
+        htmlformAss()
+        $('#formulariocesion').fadeIn(800);
+      }
+      else {
+      $('#formulariocesion').fadeOut(800);
+      $('#formulariocesion').empty();
+      }
+    });
     //Formulario cesion
-
     /*-------------------------------------------------------------------------------
     $('#Cesion').change(function(event) {
         if($('#Cesion').val()== "Si"){
