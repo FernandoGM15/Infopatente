@@ -17,7 +17,8 @@
           class="hide-on-med-and-down">Regresar</span></a>
     </div>
     <div class="col s7 m4 l6 offset-l1 offset-s1 white-text center-align ">
-      <h5>Nueva Patente</h5>
+      <h5>InfoPatente</h5>
+      <h6>Nueva Patente</h6>
     </div>
     <div class="col l2 m3 offset-m1 offset-l1  hide-on-small-only">
       <img src="img/MARCAInfoPatente.jpg" class="responsive-img">
@@ -112,7 +113,7 @@
       <div class="col s12 center align">
         <div class="col s12 l4">
           <h6><li>Seleccione tipo de patente</li></h6>
-          <div class="input-field col s12 l4 offset-l4">
+          <div class="input-field col s12 l6 offset-l4">
             <select id="TipoPatentente" class="browser-default">
               <option disabled selected value> Selecciona Opcion</option>
               <option value="Utilidad">Utilidad</option>
@@ -153,7 +154,6 @@
         </div>
       </div>
       <div id="formulariocesion">
-
       </div>
       <div class="col s12 right-align">
         <button type="submit" id="enviar" class="btn red waves-effect">Enviar</button>
@@ -162,6 +162,7 @@
   </form>
   <script src="js/jquery.min.js"></script>
   <script src="js/materialize.min.js"></script>
+  <script src="js/materializejq.js" charset="utf-8"></script>
   <script src="js/componentes.js"></script>
 </body>
 

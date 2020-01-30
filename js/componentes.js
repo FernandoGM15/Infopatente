@@ -224,10 +224,4 @@ $(document).ready(function () {
 
     });//Ciere FORM SUBMIT
 
-
-
-    //MATERIALIZE
-    $('.tooltipped').tooltip();
-    $('select').formSelect();
-    M.updateTextFields();
 });
