@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="else" dir="ltr">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/materialize.min.css">

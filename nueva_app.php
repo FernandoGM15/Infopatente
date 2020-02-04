@@ -139,7 +139,7 @@
           <div class="input-field col s12 l4 offset-l4">
             <p>
             <label>
-            <input type="radio" name="Cesion" class="with-gap "value="Si">
+            <input type="radio" name="Cesion" class="with-gap" value="Si">
             <span>Si</span>
             </label>
           </p>
