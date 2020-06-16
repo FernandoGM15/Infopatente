@@ -1,19 +1,24 @@
+<?php
+  session_start();
+  if(isset($_SESSION['logged'])){
+    header('Location: Home.php');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
     <link rel="stylesheet" href="css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="img/check.ico" />
     <title>Inicio de sesion</title>
   </head>
-  <body class="red lighten-4">
+  <body class="grey lighten-4">
     <div class="container-fluid valign-wrapper red accent-4 z-depth-3 row col s12">
         <div class="col l2 hide-on-med-and-down">
             <img src="img/MARCAInfoPatente.jpg" class="responsive-img">
         </div>
-        <div class="col s6 offset-s1">
+        <div class="col l6 s12 offset-l1">
           <div class="col s12 center-align white-text">
             <h5>Infopatente</h5>
             <h6>Sistema de apoyo en el Registro de Patentes</h6>
@@ -30,51 +35,52 @@
         <div class="col l5 card offset-l1">
           <div class="card-content row left-align">
             <div class="col s12 center-align">
-              <h6>¿Que es InfoPatente?</h6>
-              <p>InfoPatente es un Sistema para el apoyo al registro de Patentes</p>
+              <h5><b>¿Que es InfoPatente?</b></h5>
+              <h6>InfoPatente es un Sistema para el apoyo al registro de Patentes</h6>
               <h6 class="left-align">Los servicios que proporciona son los siguientes:</h6>
             </div>
-            <div class="col s6 l6">
-                <h6>Guía estructurada para el llenado de información general de la patente.</h6>
+            <table></table>
+            <div class="col s12 l6">
+                <h6><b>Guía estructurada para el llenado de información general de la patente.</b></h6>
                   <ul>
-                    <li>Título de la Patente</li>
-                    <li>Numero de Autores</li>
-                    <li>País de aplicación</li>
-                    <li>Representante legal</li>
-                    <li>Tipo de aplicación</li>
-                    <li>Estrategia de solicitud</li>
-                    <li>Tarifa de descuento</li>
-                    <li>Solicitante</li>
+                    <li><i class="material-icons tiny prefix">check</i>Titulo de la patente</li>
+                    <li><i class="material-icons tiny prefix">check</i>Numero de Autores</li>
+                    <li><i class="material-icons tiny prefix">check</i>País de aplicación</li>
+                    <li><i class="material-icons tiny prefix">check</i>Representante legal</li>
+                    <li><i class="material-icons tiny prefix">check</i>Tipo de aplicación</li>
+                    <li><i class="material-icons tiny prefix">check</i>Estrategia de solicitud</li>
+                    <li><i class="material-icons tiny prefix">check</i>Tarifa de descuento</li>
+                    <li><i class="material-icons tiny prefix">check</i>Solicitante</li>
                   </ul>
             </div>
-            <div class="col s6 l6">
-              <h6>Apoyo en la redacción de la Solicitud de Patente.</h6>
+            <div class="col s12 l6">
+              <h6><b>Apoyo en la redacción de la Solicitud de Patente.</b></h6>
                 <ul>
-                  <li>Resumen de la invención</li>
-                  <li>Antecedentes de la invención</li>
-                  <li>Realización preferente / Sumario</li>
-                  <li>Breve Descripción de los Dibujos</li>
-                  <li>Descripción Detallada del invento</li>
-                  <li>Reivindicaciones</li>
-                  <li>Objeto / Campo Técnico de la invención</li>
-                  <li>Dibujos</li>
+                  <li><i class="material-icons tiny prefix">check</i>Resumen de la invención</li>
+                  <li><i class="material-icons tiny prefix">check</i>Antecedentes de la invención</li>
+                  <li><i class="material-icons tiny prefix">check</i>Realización preferente / Sumario</li>
+                  <li><i class="material-icons tiny prefix">check</i>Breve Descripción de los Dibujos</li>
+                  <li><i class="material-icons tiny prefix">check</i>Descripción Detallada del invento</li>
+                  <li><i class="material-icons tiny prefix">check</i>Reivindicaciones</li>
+                  <li><i class="material-icons tiny prefix">check</i>Objeto / Campo Técnico de la invención</li>
+                  <li><i class="material-icons tiny prefix">check</i>Dibujos</li>
                 </ul>
             </div>
-            <div class="col s6 l6">
-              <h6>Informacion administrativa.</h6>
+            <div class="col s12 l6">
+              <h6><b>Informacion administrativa.</b></h6>
                 <ul>
-                  <li>Acceso al sistema de internet PASE del IMPI</li>
+                  <li><i class="material-icons tiny prefix">check</i>Acceso al sistema de internet PASE del IMPI</li>
                 </ul>
             </div>
-            <div class=" col s6 l6">
-              <h6>Búsqueda de Arte Previo relacionado.</h6>
+            <div class=" col s12 l6">
+              <h6><b>Búsqueda de Arte Previo relacionado.</b></h6>
                 <ul>
-                  <li>Descripción del proceso de búsqueda</li>
-                  <li>Búsquedas Nuevas</li>
-                  <li>Búsquedas previamente guardadas</li>
+                  <li><i class="material-icons tiny prefix">check</i>Descripción del proceso de búsqueda</li>
+                  <li><i class="material-icons tiny prefix">check</i>Búsquedas Nuevas</li>
+                  <li><i class="material-icons tiny prefix">check</i>Búsquedas previamente guardadas</li>
                 </ul>
             </div>
-            <div class="col s12 center-align">
+            <div class="col s12">
               <p>En cada elemento se da una descripción de lo que hay que hacer o escribir. En el caso de los elementos de la Solicitud de Patente se proporcionan ejemplos de estos elementos en patentes otorgadas en el área similar a la patente que se esta elaborando.</p>
             </div>
           </div>
@@ -85,29 +91,32 @@
             <b>Para acceder a infopatente necesitas tener una cuenta activa</b>
             </div>
             <div class="card-content">
+            <form id='login'>
               <div class="input-field">
                 <input type="text" id='usuario' class="validate">
                 <label for="usuario">Usuario</label>
               </div>
               <br>
               <div class="input-field ">
-                <label for="contraseña">Contraseña</label>
-                <input type="password" id='contraseña'>
+                <input type="password" id='contra'>
+                <label for="contra">Contraseña</label>
               </div>
               <div class="card-content">
-                <button type="submit" id='Entrar' class="btn red col s12">Iniciar Sesion</button>
+                <button class="btn waves-effect waves-light col s12 red" type="submit" >Iniciar sesion</button>
               </div>
+            </form>
               <br>
               <div class="card-content">
-                <a href="recuperar_contraseña.php">Olvidé mi contraseña</a>
+                <a href="recuperar_contra.php">Olvidé mi contraseña</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    <script src="js/jquery.min.js" charset="utf-8"></script>
-    <script src="js/login.js" charset="utf-8"></script>
-    <script src="js/materializejq.js" charset="utf-8"></script>
-    <script src="js/materialize.min.js" charset="utf-8"></script>
+    <script src="js/jsload/jquery.min.js" charset="utf-8"></script>
+    <script src="js/jsload/materialize.min.js" charset="utf-8"></script>
+    <script src="js/jsload/materializejq.js" charset="utf-8"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/index.js" charset="utf-8"></script>
   </body>
 </html>

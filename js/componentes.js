@@ -121,21 +121,7 @@ $(document).ready(function () {
       $('#formulariocesion').empty();
       }
     });
-    //Formulario cesion
-    /*-------------------------------------------------------------------------------
-    $('#Cesion').change(function(event) {
-        if($('#Cesion').val()== "Si"){
-          htmlformAss()
-          $('#formulariocesion').fadeIn(800);
-        }
-        else{
-            $('#formulariocesion').fadeOut(800);
-          $('#formulariocesion').empty();
-
-        }
-    });
-    ---------------------------------------------------------------------------------------*/
-
+   
     //Inicializacion JSON para almacenar Datos Autores
       var datosAutor = [];
       var datosRepLeg=[];

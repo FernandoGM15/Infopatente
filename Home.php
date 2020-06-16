@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!$_SESSION['logged']){
+  header('Location: index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -8,7 +14,7 @@
     <link rel="shortcut icon" href="img/check.ico" />
     <title>Sistema de Patentes</title>
   </head>
-  <body class="red lighten-4">
+  <body class="grey lighten-4">
 
   <div class="row red accent-4 valign-wrapper z-depth-2">
     <div class="col l2 hide-on-med-and-down">
@@ -18,9 +24,8 @@
       <h5>InfoPatente</h5>
       <h6>Sistema de apoyo en el Registro de Patentes</h6>
     </div>
-    <div class="col l4 hide-on-med-and-down right-align">
-        <a id="Mision" class="waves-effect btn red lighten-4 black-text "><i class="material-icons left">book</i>Mision</a>
-        <a id="Vision"  class="waves-effect btn red lighten-4 black-text "><i class="material-icons left">remove_red_eye</i>Vision</a>
+    <div class="col l4 right-align">
+        <a id="Logout" class="waves-effect btn red lighten-4 black-text " href="php/Session_destroy.php"><i class="material-icons left hide-on-med-and-down">input</i>Cerrar Sesion</a>
     </div>
   </div>
 <!-- Contenedor De cartas -->

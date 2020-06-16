@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!$_SESSION['logged']){
+  header('Location: index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -10,10 +16,10 @@
   <title>Nueva Patente</title>
 </head>
 
-<body class="red lighten-4">
+<body class="grey lighten-4">
   <div class="container-fluid row red accent-4 valign-wrapper z-depth-3">
     <div class="col s4 m4 l2 ">
-      <a href="index.html" class="btn red lighten-4 black-text"><i class="material-icons tiny left">arrow_back</i><span
+      <a href="Home.php" class="btn red lighten-4 black-text"><i class="material-icons tiny left">arrow_back</i><span
           class="hide-on-med-and-down">Regresar</span></a>
     </div>
     <div class="col s7 m4 l6 offset-l1 offset-s1 white-text center-align ">
@@ -159,10 +165,12 @@
         <button type="submit" id="enviar" class="btn red waves-effect">Enviar</button>
       </div>
     </div>
+    3
   </form>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/materialize.min.js"></script>
-  <script src="js/materializejq.js" charset="utf-8"></script>
+  <script src="js/jsload/jquery.min.js" charset="utf-8"></script>
+  <script src="js/jsload/materialize.min.js" charset="utf-8"></script>
+  <script src="js/jsload/materializejq.js" charset="utf-8"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="js/componentes.js"></script>
 </body>
 
