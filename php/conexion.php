@@ -1,5 +1,5 @@
 <?php
-require "config.php";
+require "../config/config.php";
 
 class conexion_DB{
     protected $con;

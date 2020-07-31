@@ -77,6 +77,16 @@
                 <input type="text" id='Correo_usuario'>
                 <label for="Correo_usuario">Correo Elecronico</label>
               </div>
+              <div class="input-field col l5 offset-l2">
+                <i class="material-icons prefix">lock</i>
+                <input type="text" id='Contraseña'>
+                <label for="Contraseña">Contraseña</label>
+              </div>
+              <div class="input-field col l5 offset-l2">
+                <i class="material-icons prefix">lock</i>
+                <input type="text" id='validarContraseña'>
+                <label for="validarContraseña">Validar Contraseña</label>
+              </div>
               <div class="input-field col l4 offset-l2">
                 <i class="material-icons prefix">markunread_mailbox</i>
                 <input type="text" id='CP_usuario'>

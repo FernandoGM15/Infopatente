@@ -21,7 +21,6 @@ $(document).ready(function () {
           .done(function(response) {
             if (response != 0){
               location.reload();
-              
             }
             else{
               swal({
