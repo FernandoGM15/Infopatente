@@ -74,27 +74,27 @@
               </div>
               <div class="input-field col l5 offset-l2">
                 <i class="material-icons prefix">email</i>
-                <input type="text" id='Correo_usuario'>
+                <input type="email" id='Correo_usuario'>
                 <label for="Correo_usuario">Correo Elecronico</label>
               </div>
               <div class="input-field col l5 offset-l2">
                 <i class="material-icons prefix">lock</i>
-                <input type="text" id='Contraseña'>
+                <input type="password" id='Contraseña'>
                 <label for="Contraseña">Contraseña</label>
               </div>
               <div class="input-field col l5 offset-l2">
                 <i class="material-icons prefix">lock</i>
-                <input type="text" id='validarContraseña'>
+                <input type="password" id='validarContraseña'>
                 <label for="validarContraseña">Validar Contraseña</label>
               </div>
               <div class="input-field col l4 offset-l2">
                 <i class="material-icons prefix">markunread_mailbox</i>
-                <input type="text" id='CP_usuario'>
+                <input type="text" id='CP_usuario' maxlength='5'>
                 <label for="CP_usuario">Codigo postal</label>
               </div>
               <div class="input-field col l5 offset-l2">
                 <i class="material-icons prefix">phone</i>
-                <input type="tel" id='Telefono_usuario'>
+                <input type="tel" id='Telefono_usuario' maxlength='10'>
                 <label for="Telefono_usuario">Telefono</label>
               </div>
             </div>

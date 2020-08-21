@@ -40,12 +40,14 @@ $(document).ready(function() {
 
     $('#form_registro').submit(function (e) { 
       e.preventDefault();
-      if($("#Nombre_usuario").val().length < 1  ||
-       $("#ApPaterno_usuario").val().length < 1 ||
-       $("#ApMaterno_usuario").val().length < 1 ||
-       $("#Correo_usuario").val().length < 1    ||
-       $("#CP_usuario").val().length < 1        ||
-       $("#Telefono_usuario").val().length < 1 ){  
+      if(
+        $("#Nombre_usuario").val().length < 1  ||
+        $("#ApPaterno_usuario").val().length < 1 ||
+        $("#ApMaterno_usuario").val().length < 1 ||
+        $("#Correo_usuario").val().length < 1    ||
+        ($("#Contraseña").val() != $("#validarContraseña").val()) ||
+        $("#CP_usuario").val().length < 1        ||
+        $("#Telefono_usuario").val().length < 1 ){  
         swal({
           title:"Error",
           text:"Asegurese de llenar todos los campos",
@@ -57,20 +59,40 @@ $(document).ready(function() {
       else{
         $.ajax({
           type: "POST",
-          url: "php/registro.php",
-          data: {CorreoUsuario:$('#Correo_usuario').val()},
+          url: "php/nuevo_usuario.php",
+          data: {
+            "Tipo": $("#tipo_de_usuario").val(),
+            "Empresa": $("#numero_identificacion").val(),
+            "NumIdentificacion": $("#numero_identificacion").val(),
+            "Nombre": $("#Nombre_usuario").val(),
+            "ApPat": $("#ApPaterno_usuario").val(),
+            "ApMat": $("#ApMaterno_usuario").val(),
+            "Email": $("#Correo_usuario").val(),
+            "Contraseña": $("#Contraseña").val(),
+            "Cp" : $("#CP_usuario").val(),
+            "Telefono" : $("#Telefono_usuario").val(),
+          },
           success: function (response) {
-            console.log(response);
+            if ( response == "Exito al registrar"){
+              swal({
+                title: "Gracias",
+                text: "Verificaremos su informacion y enviaremos un correo de confirmacion",
+                icon: "success",
+                button: "Aceptar"
+              }).then(function() {
+              location.href="index.php";
+              });
+            }
+            else if (response == "Fallo al registrar, usuario ya existe"){
+              swal({
+                title: "Error",
+                text: "El correo electronico, ya ha sido registrado",
+                icon: "error",
+                button: "Aceptar"
+              })
+            }
           }
         });
-        swal({
-          title: "Gracias",
-          text: "Verificaremos su informacion y enviaremos un correo de confirmacion",
-          icon: "success",
-          button: "Aceptar"
-      }).then(function() {
-        location.href="index.php";
-      });
       } 
     });
 });
