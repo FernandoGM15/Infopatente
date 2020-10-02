@@ -1,6 +1,6 @@
 <?php
 require "conexion.php";
-class usuario extends conexion_DB{
+class controlador extends conexion_DB{
 
   function __construct(){
     parent::__construct();
@@ -40,20 +40,26 @@ class usuario extends conexion_DB{
     }
   }
 
+  public function registrarEmpresas($Nombre, $NombreRL, $Direccion1RL, $Direccion2RL,$EmailRL, $TelefonoRL, $NombreSol, $EmailSol, $TelefonoSol){
+    $Nombre = $this->con->real_escape_string($Nombre);
+    $NombreRL = $this->con->real_escape_string($NombreRL);
+    $Direccion1RL = $this->con->real_escape_string($Direccion1RL);
+    $Direccion2RL = $this->con->real_escape_string($Direccion2RL);
+    $EmailRL = $this->con->real_escape_string($EmailRL);
+    $TelefonoRL = $this->con->real_escape_string($TelefonoRL);
+    $NombreSol = $this->con->real_escape_string($NombreSol);
+    $EmailSol = $this->con->real_escape_string($EmailSol);
+    $TelefonoSol = $this->con->real_escape_string($TelefonoSol);
+    $validate = mysqli_query($this->con, "SELECT * FROM Empresas WHERE NOMBRE = '$Nombre'");
+    if ( $validate->num_rows == 0 ){
+      $res = mysqli_query($this->con, "INSERT INTO Empresas (NOMBRE, NOMBRE_RL, DIRECCION1_RL, DIRECCION2_RL, EMAIL_RL, TELEFONO_RL, NOMBRE_SOL, EMAIL_SOL, TELEFONO_SOL)
+        VALUES ('$Nombre','$NombreRL','$Direccion1RL','$Direccion2RL','$EmailRL',$TelefonoRL,'$NombreSol', '$EmailSol', $TelefonoSol)" );
+      echo "Exito al registrar";
+    }
+    else{
+      return "Fallo al registrar, empresa ya existe";
+    }
+  }
 }
 
-// $tipo = "Alumno";
-// $empresa = "Universidad Autonoma de Coahuila";
-// $numIDentificacion = "123456789";
-// $Nombre = "Administrador";
-// $ApPat = "Admin";
-// $ApMAt = "Admin";
-// $email = "usuario@infopatente.mx";
-// $contraseña = "infopatente.mx";
-// $CP = 25069;
-// $telefono = 8444179783;
-
-// $registro = new usuario();
-// $res = $registro->registrarUsuario($tipo, $empresa, $numIDentificacion, $Nombre, $ApPat, $ApMAt, $email, $contraseña, $CP, $telefono);
-// echo $res;
 ?>

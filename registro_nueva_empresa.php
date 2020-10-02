@@ -54,12 +54,12 @@
               </div>
               <div class="input-field col l8 s12 offset-l1">
                 <i class="material-icons prefix">email</i>
-                <input type="text" id='email_responsable_legal' name='email_responsable_legal'>
+                <input type="email" id='email_responsable_legal' name='email_responsable_legal'>
                 <label for="email_responsable_legal">Correo Electronico</label>
               </div>
               <div class="input-field col l8 s12 offset-l1">
                 <i class="material-icons prefix">phone</i>
-                <input type="text" id='tel_responsable_legal' name='tel_responsable_legal'>
+                <input type="tel" maxlength="10" id='tel_responsable_legal' name='tel_responsable_legal'>
                 <label for="tel_responsable_legal">Telefono</label>
               </div>
               <div class="col s12 center-align card-panel deep-orange lighten-3">
@@ -72,12 +72,12 @@
               </div>
               <div class="input-field col l8 s12 offset-l1">
                 <i class="material-icons prefix">mail</i>
-                <input type="text" id='email_solicitante' name='email_solicitante'>
+                <input type="email" id='email_solicitante' name='email_solicitante'>
                 <label for="email_solicitante">Correo Electronico</label>
               </div>
               <div class="input-field col l8 s12 offset-l1">
                 <i class="material-icons prefix">phone_iphone</i>
-                <input type="text" id='tel_solicitante' name='tel_solicitante'>
+                <input type="tel" maxlength="10" id='tel_solicitante' name='tel_solicitante'>
                 <label for="tel_solicitante">Telefono</label>
               </div>
               <div class="s12 right-align">

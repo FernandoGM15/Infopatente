@@ -93,8 +93,8 @@
             <div class="card-content">
             <form id='login'>
               <div class="input-field">
-                <input type="text" id='usuario' class="validate">
-                <label for="usuario">Usuario</label>
+                <input type="email" id='usuario' class="validate">
+                <label for="usuario">Email</label>
               </div>
               <br>
               <div class="input-field ">

@@ -31,10 +31,10 @@ if(!$_SESSION['logged']){
 <!-- Contenedor De cartas -->
   <div class="container-fluid row red-text text-darken-4">
     <!-- Carta Para Aplicación de patente LARGE-->
-    <div class="col l10 m12 s12 offset-l1 hide-on-med-and-down">
+    <div class="col l10 m12 s12 offset-l1 ">
       <div class="card small horizontal">
         <div class="card-image">
-          <img src="img/NuevaAplicacion.jpg" class="responsive-img">
+          <img src="img/NuevaAplicacion.jpg" class="responsive-img hide-on-med-and-down">
         </div>
         <div class="card-stacked">
           <span class="card-title">Nueva Aplicacion</span>
@@ -48,29 +48,11 @@ if(!$_SESSION['logged']){
       </div>
     </div>
     <!-- Cierre de Carta LARGE-->
-    <!-- Carta Para Aplicación de patente SMALL-->
-    <div class="row hide-on-large-only">
-      <div class="col s12">
-        <div class="card">
-          <div class="card-image">
-            <img src="img/NuevaAplicacion.jpg" class="responsive-img">
-          </div>
-          <span class="card-title">Nueva Aplicacion</span>
-          <div class="card-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="card-action">
-            <a href="nueva_app.php" class="red-text text-darken-4"><i class="material-icons left">add</i>Crear Nueva Aplicacion</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Cierre de Carta SMALL-->
     <!-- Carta Para Consultar la ultima Pantente Aplicada LARGE -->
-    <div class="col l10 m12 s12 offset-l1 hide-on-med-and-down">
+    <div class="col l10 m12 s12 offset-l1 ">
       <div class="card small horizontal">
         <div class="card-image">
-          <img src="img/UltimaPatenteAplicada.jpg">
+          <img src="img/UltimaPatenteAplicada.jpg" class="responsive-img hide-on-med-and-down">
         </div>
         <div class="card-stacked">
           <span class="card-title">Ultima Patente Aplicada</span>
@@ -84,29 +66,11 @@ if(!$_SESSION['logged']){
       </div>
     </div>
       <!-- Cierre de Carta LARGE-->
-      <!-- Carta Para Consultar la ultima Pantente Aplicada SMALL-->
-      <div class="row hide-on-large-only">
-        <div class="col s12">
-          <div class="card">
-            <div class="card-image">
-              <img src="img/UltimaPatenteAplicada.jpg" class="responsive-img">
-            </div>
-            <span class="card-title">Ultima Patente Aplicada</span>
-            <div class="card-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-            <div class="card-action">
-              <a href="#" class="red-text text-darken-4"><i class="material-icons left">today</i>Consultar ultima patente aplicada</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Cierre de Carta SMALL-->
       <!--- Carta Para Consultar Todas las Pantentes Aplicadas LARGE-->
-      <div class="col l10 m12 s12 offset-l1 hide-on-med-and-down">
+      <div class="col l10 m12 s12 offset-l1">
         <div class="card small horizontal">
           <div class="card-image">
-            <img src="img/PatentesAplicadas.jpg">
+            <img src="img/PatentesAplicadas.jpg" class="responsive-img hide-on-med-and-down">
           </div>
           <div class="card-stacked">
             <span class="card-title">Consultar Patentes Aplicadas</span>
@@ -120,24 +84,6 @@ if(!$_SESSION['logged']){
         </div>
       </div>
       <!-- Cierre de Carta LARGE-->
-      <!-- Carta Para Consultar Todas las Pantentes Aplicada SMALL-->
-      <div class="row hide-on-large-only">
-        <div class="col s12">
-          <div class="card">
-            <div class="card-image">
-              <img src="img/PatentesAplicadas.jpg" class="responsive-img">
-            </div>
-            <span class="card-title">Consultar Patentes Aplicadas</span>
-            <div class="card-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-            <div class="card-action">
-              <a href="#" class="red-text text-darken-4"><i class="material-icons left">view_list</i>Consultar Todas las patentes aplicadas</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Cierre de Carta SMALL-->
 </div>
 <!-- Cierre de Contenedor-->
     <script src="js/materialize.min.js"></script>

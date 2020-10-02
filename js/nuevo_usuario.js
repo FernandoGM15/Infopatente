@@ -90,6 +90,7 @@ $(document).ready(function() {
                 icon: "error",
                 button: "Aceptar"
               })
+              document.getElementById("form_registro").reset();
             }
           }
         });

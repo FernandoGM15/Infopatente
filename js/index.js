@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    $($('#login')).submit(function (e) {
+    $('#login').submit(function (e) {
+      user = $("#usuario").val();
+      pass = $("#contra").val();
       e.preventDefault();
         if (!$('#contra').val() || !$('#usuario').val()) {
             swal({
@@ -14,8 +16,8 @@ $(document).ready(function () {
             url: 'php/login.php',
             type: 'POST',
             data: {
-              user: $('#usuario').val(),
-              pass: $('#contra').val()
+              user: user.toLowerCase(),
+              pass: pass
             }
           })
           .done(function(response) {

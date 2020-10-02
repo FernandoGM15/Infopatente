@@ -1,9 +1,9 @@
 <?php
-require_once 'usuario.php';
+require_once 'controlador.php';
 session_start();
 $user = $_POST['user'];
 $pass = $_POST['pass'];
-$validar = new usuario();
+$validar = new controlador();
 $resultado = $validar->validar($user, $pass);
 if ($resultado == 0) {
     echo $resultado;

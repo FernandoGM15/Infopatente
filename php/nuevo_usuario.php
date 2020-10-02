@@ -1,5 +1,5 @@
 <?php
-require_once 'usuario.php';
+require_once 'controlador.php';
 $Tipo = $_POST["Tipo"];
 $Empresa = $_POST["Empresa"];
 $NumIDentificacion = $_POST["NumIdentificacion"];
@@ -11,10 +11,10 @@ $Contraseña = $_POST["Contraseña"];
 $Cp = $_POST["Cp"];
 $Telefono = $_POST["Telefono"];
 if (strlen($Empresa)==0){
-    $Empresa = "NULL";
-    $NumIDentificacion = "NULL";
+    $Empresa = "NULO";
+    $NumIDentificacion = "NULO";
 }
-$registrar = new  usuario();
+$registrar = new  controlador();
 $resultado = $registrar->registrarUsuario($Tipo, $Empresa, $NumIDentificacion, $Nombre, $ApPat, $ApMat, $Email, $Contraseña, $Cp, $Telefono);
 echo $resultado;
 ?>
