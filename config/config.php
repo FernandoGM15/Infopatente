@@ -1,6 +1,6 @@
 <?php
 define('DB_HOST','localhost');
-define('DB_USER','root');
-define('DB_PASS','');
+define('DB_USER','fgarcia');
+define('DB_PASS','Lufegamo_15');
 define('DB_NAME','infopate_DB');
 ?>

@@ -43,7 +43,7 @@
                 </select>
               </div>
             </div>
-            <div class="col l12" id='registro_folio'">
+            <div class="col l12" id='registro_folio' style="display: none">
               <div class="input-field col l5 offset-l1">
                   <i class="material-icons prefix">domain</i>
                   <select class="col l10 right browser-default" id='nombre_empresa'>
@@ -51,7 +51,7 @@
               </div>
               <div class="input-field col l4 ">
                 <i class="material-icons prefix">fingerprint</i>
-                  <input type="text" id='numero_identificacion'>
+                  <input type="text" id='numero_identificacion' maxlength="10">
                   <label for="numero_identificacion">Numero de identificacion</label>
               </div>
               <div class="input-field col l2">
@@ -59,7 +59,7 @@
               </div>
             </div>
             <form id='form_registro'>
-            <div class="col l12" id='registro_no_folio'>
+            <div class="col l12" id='registro_no_folio'style="display: none">
               <div class="input-field col l8 offset-l2">
                 <input type="text" id='Nombre_usuario'>
                 <label for="Nombre_usuario">Nombre</label>
@@ -89,18 +89,18 @@
               </div>
               <div class="input-field col l4 offset-l2">
                 <i class="material-icons prefix">markunread_mailbox</i>
-                <input type="text" id='CP_usuario' maxlength='5'>
+                <input type="text" id='CP_usuario' maxlength="5">
                 <label for="CP_usuario">Codigo postal</label>
               </div>
               <div class="input-field col l5 offset-l2">
                 <i class="material-icons prefix">phone</i>
-                <input type="tel" id='Telefono_usuario' maxlength='10'>
+                <input type="tel" id='Telefono_usuario' maxlength="10">
                 <label for="Telefono_usuario">Telefono</label>
               </div>
             </div>
             <div class="col l12 right-align">
               <div class="col l4 right">
-                <button type="submit" class='btn red' id='registrar'>Registrar</button>
+                <button type="submit" class='btn red' id='registrar' style="display: none">Registrar</button>
               </div>
             </div>
             </form>

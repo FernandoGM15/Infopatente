@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $('#login').submit(function (e) {
+      e.preventDefault();
       user = $("#usuario").val();
       pass = $("#contra").val();
-      e.preventDefault();
         if (!$('#contra').val() || !$('#usuario').val()) {
             swal({
                 title:"Error",
@@ -13,9 +13,10 @@ $(document).ready(function () {
         }
         else{
           $.ajax({
-            url: 'php/login.php',
+            url: 'Controlador/UsuarioController.php',
             type: 'POST',
             data: {
+              flag: 5,
               user: user.toLowerCase(),
               pass: pass
             }

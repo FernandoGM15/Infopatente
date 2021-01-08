@@ -15,7 +15,34 @@ if(!$_SESSION['logged']){
   <link rel="shortcut icon" href="img/check.ico" />
   <title>Nueva Patente</title>
 </head>
-
+ <!-- MODAL AUTORES -->
+ <div id="modal-autores" class="modal">
+      <div class="modal-content" id="modal-contenido-autores">
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+        <a href="#" id="s-formulario-autores" class="waves-effect waves-light btn">Guardar</a>
+      </div>
+ </div>
+ <!-- MODAL REPRESENTANTE LEGAL -->
+ <div id="modal-representante" class="modal">
+      <div class="modal-content" id="modal-contenido-representante">
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+        <a href="#" id="s-formulario-RL" class="waves-effect waves-light btn">Guardar</a>
+    </div>
+  </div>
+  <!-- MODAL CESIONARIO -->
+ <div id="modal-cesion" class="modal">
+      <div class="modal-content" id="modal-contenido-cesion">
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+        <a href="#" id="s-formulario-cesion" class="waves-effect waves-light btn">Guardar</a>
+    </div>
+ </div>
+ 
 <body class="grey lighten-4">
   <div class="container-fluid row red accent-4 valign-wrapper z-depth-3">
     <div class="col s4 m4 l2 ">
@@ -38,7 +65,7 @@ if(!$_SESSION['logged']){
 
             <div class="input-field col s12">
               <h6><li>Ingrese Titulo de su patente</li> </h6>
-            <input id="NomPatente" type="text" class="validate">
+            <input id="NomPatente" name="NomPatente"type="text" class="validate" required>
             <a href="#" class="right black-text"><i class="material-icons tiny tooltipped" data-tooltip="Trate de ser conciso y descriptivo de lo que es o hace la patente.
             Este nombre no es un nombre de archivo.">help</i></a>
           </div>
@@ -46,7 +73,7 @@ if(!$_SESSION['logged']){
         <div class="col s12 l5">
           <div class="input-field input-field col s12 m4 l6 right">
               <h6 ><li>Ingrese Numero de Autores</li> </h6>
-            <select id="NumAutores" class="browser-default">
+            <select id="NumAutores" class="browser-default" required>
               <option disabled selected value>Seleccione</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -63,14 +90,12 @@ if(!$_SESSION['logged']){
             data-tooltip="Todos los autores son considerados de tener los mismos e iguales derechos.">help</i></a>
           </div>
         </div>
-        <div id="formularioDatosAutores">
-        </div>
       </div>
     <div class="col s12 center-align">
       <div class= "col s12 l4">
         <h6><li>Pais donde esta patente sera presentada</li></h6>
         <div class="input-field col s12 l4 offset-l4">
-          <select id="PaisAplicacion" class="browser-default">
+          <select id="PaisAplicacion" name="PaisAplicacion" class="browser-default" required>
             <option disabled selected value> Seleccione</option>
             <option value="Mexico">Mexico</option>
           </select>
@@ -82,13 +107,13 @@ if(!$_SESSION['logged']){
         <div class="input-field col s12 l4 offset-l4">
           <p>
           <label>
-          <input type="radio" name="TipoEntidad" class="with-gap" value="Si">
+          <input type="radio" name="TipoEntidad" id="TipoEntidad" class="with-gap" value="Si">
           <span>Si</span>
           </label>
         </p>
         <p>
           <label >
-          <input type="radio" name="TipoEntidad" class="with-gap" value="No">
+          <input type="radio" name="TipoEntidad" id="TipoEntidad" class="with-gap" value="No">
           <span>No</span>
           </label>
         </p>
@@ -100,13 +125,13 @@ if(!$_SESSION['logged']){
         <div class="input-field col s12 l4 offset-l4">
           <p>
           <label>
-          <input type="radio" name="RepresentanteLegal" class="with-gap" value="Si">
+          <input type="radio" name="RepresentanteLegal" id="RepresentanteLegal" class="with-gap" value="Si">
           <span>Si</span>
           </label>
         </p>
         <p>
           <label >
-          <input type="radio" name="RepresentanteLegal" class="with-gap"  value="No">
+          <input type="radio" name="RepresentanteLegal" id="RepresentanteLegal" class="with-gap"  value="No">
           <span>No</span>
           </label>
         </p>
@@ -114,13 +139,11 @@ if(!$_SESSION['logged']){
         </div>
       </div>
     </div>
-      <div id="formularioRepresentante">
-      </div>
       <div class="col s12 center align">
         <div class="col s12 l4">
           <h6><li>Seleccione tipo de patente</li></h6>
           <div class="input-field col s12 l6 offset-l4">
-            <select id="TipoPatentente" class="browser-default">
+            <select id="TipoPatente" name="TipoPatente" class="browser-default" required>
               <option disabled selected value> Selecciona Opcion</option>
               <option value="Utilidad">Utilidad</option>
               <option value="Diseño">Diseño</option>
@@ -128,38 +151,36 @@ if(!$_SESSION['logged']){
             </select>
             <a href="#" class="right black-text"><i class="material-icons tiny tooltipped" data-tooltip="Seleccione una opcion para desplegar una pequeña descripcion">help</i></a>
           </div>
-          <p class="col s12" id="DescTiposPatente"></p>
+          <p class="col s12" id="DescTiposPatente" name="DescTiposPatente"></p>
         </div>
         <div class="col s12 l4">
           <h6><li>Seleccione tipo de Aplicacion</li></h6>
           <div class="input-field col s12 l6 offset-l3">
-            <select id="TipoAplicacion" class="browser-default">
+            <select id="TipoAplicacion" name="TipoAplicacion" class="browser-default" required>
               <option disabled selected value> Selecciona Opcion</option>
             </select>
             <a href="#" class="right black-text"><i class="material-icons tiny tooltipped" data-tooltip="Seleccione una opcion para desplegar una pequeña descripcion">help</i></a>
           </div>
-          <p class="col s12" id= "DescAplicacionPatente"></p>
+          <p class="col s12" id= "DescAplicacionPatente" name= "DescAplicacionPatente"></p>
         </div>
         <div class="col s12 l4">
           <h6><li>¿Desea agregar un cesionario?</li></h6>
           <div class="input-field col s12 l4 offset-l4">
             <p>
             <label>
-            <input type="radio" name="Cesion" class="with-gap" value="Si">
+            <input type="radio" name="Cesion" id="Cesion" class="with-gap" value="Si">
             <span>Si</span>
             </label>
           </p>
           <p>
             <label >
-            <input type="radio" name="Cesion" class="with-gap" value="No">
+            <input type="radio" name="Cesion" id="Cesion" class="with-gap" value="No">
             <span>No</span>
             </label>
           </p>
             <a href="#" class="right black-text"><i class="material-icons tiny tooltipped" data-tooltip="Una entidad pequeña se define como: persona, empresa pequeña u organización sin fines de lucro">help</i></a>
           </div>
         </div>
-      </div>
-      <div id="formulariocesion">
       </div>
       <div class="col s12 right-align">
         <button type="submit" id="enviar" class="btn red waves-effect">Enviar</button>
@@ -171,7 +192,7 @@ if(!$_SESSION['logged']){
   <script src="js/jsload/materialize.min.js" charset="utf-8"></script>
   <script src="js/jsload/materializejq.js" charset="utf-8"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="js/componentes.js"></script>
+  <script src="js/nueva_app.js"></script>
 </body>
 
 </html>

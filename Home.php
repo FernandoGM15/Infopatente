@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!$_SESSION['logged']){
+if(!$_SESSION["logged"]){
   header('Location: index.php');
 }
 ?>
@@ -25,7 +25,7 @@ if(!$_SESSION['logged']){
       <h6>Sistema de apoyo en el Registro de Patentes</h6>
     </div>
     <div class="col l4 right-align">
-        <a id="Logout" class="waves-effect btn red lighten-4 black-text " href="php/Session_destroy.php"><i class="material-icons left hide-on-med-and-down">input</i>Cerrar Sesion</a>
+        <a id="Logout" class="waves-effect btn red lighten-4 black-text " href="Modelo/Session_destroy.php"><i class="material-icons left hide-on-med-and-down">input</i>Cerrar Sesion</a>
     </div>
   </div>
 <!-- Contenedor De cartas -->
