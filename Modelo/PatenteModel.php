@@ -53,17 +53,18 @@ class PatenteModel extends conexion_DB{
     /**
      *METODO PARA INSERTAR DATOS 
      */
-    public function setPatente($nombre, $pais_presentacion ,$entidad_pequeña, $tipo, $aplicacion)
+    public function setPatente($nombre, $pais_presentacion ,$entidad_pequeña, $tipo, $aplicacion, $email_registro)
     {
         $nombre = $this->conn->real_escape_string($nombre);
         $pais_presentacion = $this->conn->real_escape_string($pais_presentacion);
         $entidad_pequeña = $this->conn->real_escape_string($entidad_pequeña);
         $tipo = $this->conn->real_escape_string($tipo);
         $aplicacion = $this->conn->real_escape_string($aplicacion);
+        $email_registro = $this->conn->real_escape_string($email_registro);
         $autorizacion = "NO";
         $fecha_mod = date("Y-m-d H:i:s");
-        $sql = "INSERT INTO patentes (nombre, pais_presentacion, entidad_pequeña, tipo, aplicacion, autorizacion, fecha_mod)
-            VALUES ('$nombre','$pais_presentacion', '$entidad_pequeña', '$tipo', '$aplicacion', '$autorizacion','$fecha_mod')";
+        $sql = "INSERT INTO patentes (nombre, pais_presentacion, entidad_pequeña, tipo, aplicacion, email_registro, autorizacion, fecha_mod)
+            VALUES ('$nombre','$pais_presentacion', '$entidad_pequeña', '$tipo', '$aplicacion', '$email_registro','$autorizacion','$fecha_mod')";
         $resultado = mysqli_query($this->conn,$sql) or die (mysqli_error($this->conn));
         if(mysqli_affected_rows($this->conn)){
             return "Exito al insertar";
@@ -86,7 +87,7 @@ class PatenteModel extends conexion_DB{
     /**
      * METODO PARA ACTUALIZAR
      */
-    public function updateCesionario($id, $nombre, $pais_presentacion ,$entidad_pequeña, $tipo, $aplicacion)
+    public function updatePatente($id, $nombre, $pais_presentacion ,$entidad_pequeña, $tipo, $aplicacion)
     {
         $id = $this->conn->real_escape_string($id);
         $nombre = $this->conn->real_escape_string($nombre);

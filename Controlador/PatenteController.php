@@ -42,12 +42,14 @@ switch($flag){
         $entidad_pequeña = $_POST["entidad_pequeña"];
         $tipo = $_POST["tipo"];
         $aplicacion = $_POST["aplicacion"];
+        $email_registro = $_POST["email_registro"];
         $resultado = $patente->setPatente(
             $nombre,
             $pais_presentacion,
             $entidad_pequeña,
             $tipo,
-            $aplicacion
+            $aplicacion,
+            $email_registro
         );
         echo $resultado;
         break;

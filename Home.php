@@ -84,9 +84,9 @@ if(!$_SESSION["logged"]){
         </div>
       </div>
       <!-- Cierre de Carta LARGE-->
-</div>
+  </div>
 <!-- Cierre de Contenedor-->
-    <script src="js/materialize.min.js"></script>
+    <script src="js/jsload/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
     </script>
   </body>

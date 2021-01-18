@@ -74,7 +74,7 @@ if(!$_SESSION['logged']){
           <div class="input-field input-field col s12 m4 l6 right">
               <h6 ><li>Ingrese Numero de Autores</li> </h6>
             <select id="NumAutores" class="browser-default" required>
-              <option disabled selected value>Seleccione</option>
+              <option disabled selected value="0">Seleccione</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -183,10 +183,10 @@ if(!$_SESSION['logged']){
         </div>
       </div>
       <div class="col s12 right-align">
+        <input type="hidden" name="email_registro" id="email_registro" value= '<?php echo $_SESSION["data"]->email;?>'>
         <button type="submit" id="enviar" class="btn red waves-effect">Enviar</button>
       </div>
     </div>
-    3
   </form>
   <script src="js/jsload/jquery.min.js" charset="utf-8"></script>
   <script src="js/jsload/materialize.min.js" charset="utf-8"></script>

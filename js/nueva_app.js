@@ -16,6 +16,7 @@ $(document).ready(function () {
         icon:"error",
         button:"Aceptar"
       });
+      $("#NumAutores").val("0");
     }
     else{
       for (let i = 1; i <= $(this).val(); i++) {
@@ -519,6 +520,7 @@ $(document).ready(function () {
         entidad_pequeña: $('input[name="TipoEntidad"]:checked').val().toUpperCase(),
         tipo: $('select[name=TipoPatente] option').filter(':selected').val().toUpperCase(),
         aplicacion: $('select[name=TipoAplicacion] option').filter(':selected').val().toUpperCase(),
+        email_registro: $("#email_registro").val().toLowerCase()
       },
       function (data) {
         if (data == "Exito al insertar"){
@@ -535,7 +537,7 @@ $(document).ready(function () {
           swal({
             title:"Error",
             text:"La patente no ha sido registrada correctamente, comuniquese con soporte",
-            icon:"success",
+            icon:"error",
             button:"Aceptar"
           });
         }
