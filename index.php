@@ -17,6 +17,10 @@
         overflow-y: auto;
         height: 32.4rem;
       }
+
+      .logo{
+        border-radius: .25rem;
+      }
     </style>
   </head>
   <body class="grey lighten-4">
@@ -24,7 +28,7 @@
       <div class="row">
         <div class="valign-wrapper">
           <div class="col l2 left-align hide-on-med-and-down">
-            <img src="img/MARCAInfoPatente.jpg" class="responsive-img">
+            <img src="img/MARCAInfoPatente.jpg" class="logo responsive-img">
           </div>
           <div class="col l6 s9  offset-l1">
             <div class="col s12 center-align white-text">
@@ -34,7 +38,7 @@
           </div>
           <div class="col l3 s3">
             <div class="col s3 right">
-              <a href="nuevo_usuario.php" class="red lighten-4 white-text tooltipped" data-position="left" data-tooltip="Crear usuario"><i class="medium material-icons right">person_add</i></a>
+              <a id="Logout" href="nuevo_usuario.php" class="red lighten-4 white-text tooltipped" data-position="left" data-tooltip="Crear usuario"><i class="medium material-icons right icono">person_add</i></a>
             </div>
           </div>
         </div>
