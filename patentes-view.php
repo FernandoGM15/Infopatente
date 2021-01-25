@@ -1,3 +1,8 @@
+<?php
+if(!$_SESSION['logged']){
+  header('Location: index.php');
+}
+?>
 <section>
   <div class="card">
     <div class="card-content">

@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!$_SESSION['logged']){
+  header('Location: index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +42,10 @@
         a:hover{
           color: black;
           cursor: pointer;
+        }
+
+        th{
+          cursor:pointer;
         }
 
     </style>
