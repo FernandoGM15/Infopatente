@@ -7,6 +7,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="img/check.ico" />
+    <script src="js/jsload/jquery-3.1.1.min.js"></script>
+    <script src="js/jsload/materializejq.js"></script>
+    <script src="js/jsload/dataTables.js"></script>
+    <script src="js/jsload/materialize.min.js"></script>
     <title>Sistema de patentes - Administrador</title>
     <style>
         .tabs .tab a{
@@ -72,9 +76,5 @@
             <div id="usuarios-tab" class="col s12"><?php include "usuarios-view.php";?></div>
         </div>
     </div>
-    <script src="js/jsload/jquery-3.1.1.min.js"></script>
-    <script src="js/jsload/dataTables.js"></script>
-    <script src="js/jsload/materialize.min.js"></script>
-    <script src="js/jsload/materializejq.js"></script>
 </body>
 </html>

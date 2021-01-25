@@ -14,13 +14,12 @@
               <th>Aplicacion</th>
               <th>Autorizado</th>
               <th>Fecha Modificacion</th>
-              <th>Acciones</th>
+              <th style="width: 10%;">Acciones</th>
             </thead>
           </table>
         </div>
       </div>
     </div>
   </div>
-  <script src="js/jsload/jquery-3.1.1.min.js"></script>
   <script src="js/patentes-view.js"></script>
 </section>

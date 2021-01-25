@@ -1,7 +1,12 @@
 <?php
   session_start();
   if(isset($_SESSION["logged"])){
-    header('Location: Home.php');
+    if($_SESSION["data"]->tipo == "ADMINISTRADOR"){
+      header('Location:admin_panel.php');
+    }
+    else{
+      header('Location: Home.php');
+    }
   }
 ?>
 <!DOCTYPE html>
@@ -13,14 +18,14 @@
     <link rel="shortcut icon" href="img/check.ico" />
     <title>Inicio de sesion</title>
     <style>
-      .servicios{
-        overflow-y: auto;
-        height: 32.4rem;
-      }
-
       .logo{
         border-radius: .25rem;
       }
+
+      .servicios{
+          overflow-y: auto;
+          height: 32.4rem;
+        }
     </style>
   </head>
   <body class="grey lighten-4">
@@ -30,13 +35,13 @@
           <div class="col l2 left-align hide-on-med-and-down">
             <img src="img/MARCAInfoPatente.jpg" class="logo responsive-img">
           </div>
-          <div class="col l6 s9  offset-l1">
+          <div class="col l6 m9  offset-l1">
             <div class="col s12 center-align white-text">
               <h5>Infopatente</h5>
               <h6>Sistema de apoyo en el registro de patentes</h6>
             </div>
           </div>
-          <div class="col l3 s3">
+          <div class="col l3 m3">
             <div class="col s3 right">
               <a id="Logout" href="nuevo_usuario.php" class="red lighten-4 white-text tooltipped" data-position="left" data-tooltip="Crear usuario"><i class="medium material-icons right icono">person_add</i></a>
             </div>
@@ -46,7 +51,7 @@
     </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col l6 s12">
+        <div class="col l6 m12">
           <div class="container">
             <div class="card">
               <div class="card-action deep-orange lighten-3 ">
@@ -75,7 +80,7 @@
             </div>
           </div>
         </div>
-        <div class="col l6 s12">
+        <div class="col m12 l6">
           <div class="card">
             <div class="card-content servicios">
               <div class="row">

@@ -1,20 +1,3 @@
-let language= {
-    "sProcessing": "Procesando ...",
-    "sLengthMenu": "",
-    "sZeroRecords": "Ningun resultado encontrado",
-    "sEmptyTable": "No hay datos en la tabla",
-    "sInfo": "Líneas _START_ a _END_ de _TOTAL_ Registros",
-    "sInfoEmpty": "No se muestra ninguna línea",
-    "sInfoFiltered": "(Filtrar maximo _MAX_)",
-    "sInfoPostFix": "",
-    "sSearch": "Buscar",
-    "sUrl": "",
-    "sInfoThousands": ",",
-    "sLoadingRecords": "Cargando...",
-    "oPaginate": {
-    "sFirst": "Primero", "sLast": "Ultimo", "sNext": "Siguiente", "sPrevious": "Previo"
-    }
-}
 $(function () {
     //TABLA DE PATENTES
     let tablaPatentes = $('#tabla-patentes').DataTable({
@@ -43,10 +26,22 @@ $(function () {
                 }
             },
             {defaultContent: 
-                    `<div class="dropdown">
-                        <button class="btn btn-warning dropdown-toggle" type="button" id="dropdown-actions" data-toggle="dropdown">
-                                Acciones
+                    ` <div class="row">
+                    <div class="col s12">
+                        <button class="btnEditarP light-green col s12 btn btn-warning dropdown-toggle" type="button" id="dropdown-actions" data-toggle="dropdown">
+                            Autorizar
                         </button>
+                    </div>
+                    <div class="col s12">
+                        <button class="btnBorrarP light-blue lighten-1 col s12 btn btn-warning dropdown-toggle" type="button" id="dropdown-actions" data-toggle="dropdown">
+                            Editar
+                        </button>
+                    </div>
+                    <div class="col s12">
+                        <button class="btnBorrarP  red lighten-1 col s12 btn btn-warning dropdown-toggle" type="button" id="dropdown-actions" data-toggle="dropdown">
+                            Borrar
+                        </button>
+                    </div>
                     </div>
                     `
                 }
