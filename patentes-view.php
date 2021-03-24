@@ -19,7 +19,7 @@ if(!$_SESSION['logged']){
               <th>Aplicacion</th>
               <th>Autorizado</th>
               <th>Fecha Modificacion</th>
-              <th style="width: 10%;">Acciones</th>
+              <th>Acciones</th>
             </thead>
           </table>
         </div>

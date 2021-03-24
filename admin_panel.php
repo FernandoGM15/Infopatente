@@ -14,9 +14,10 @@ if(!$_SESSION['logged']){
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="img/check.ico" />
     <script src="js/jsload/jquery-3.1.1.min.js"></script>
+    <script src="js/jsload/jquery.tabledit.min.js"></script>
+    <script src="js/jsload/materialize.min.js"></script>
     <script src="js/jsload/materializejq.js"></script>
     <script src="js/jsload/dataTables.js"></script>
-    <script src="js/jsload/materialize.min.js"></script>
     <title>Sistema de patentes - Administrador</title>
     <style>
         .tabs .tab a{
@@ -52,27 +53,19 @@ if(!$_SESSION['logged']){
 </head>
 <body>
 <body class="grey lighten-4">
-    <div class="container-fluid red accent-4 z-depth-3">
-      <div class="row">
-        <div class="valign-wrapper">
-          <div class="col l2 left-align hide-on-med-and-down">
-            <img src="img/MARCAInfoPatente.jpg" class="logo responsive-img">
+    <div class="container-fluid">
+        <div class="row red accent-4 valign-wrapper z-depth-2">
+          <div class="col l2 hide-on-med-and-down">
+            <img src="img/MARCAInfoPatente.jpg" class="responsive-img valign-wrapper">
           </div>
-          <div class="col l6 s9  offset-l1">
-            <div class="col s12 center-align white-text">
-              <h5>Infopatente</h5>
-              <h6>Sistema de apoyo en el registro de patentes</h6>
-            </div>
+          <div class="col l4 m7 s6 offset-s3 offset-m2 offset-l2 center-align white-text">
+            <h5>InfoPatente</h5>
+            <h6>Sistema de apoyo en el Registro de Patentes</h6>
           </div>
-          <div class="col l3 s3">
-            <div class="col s3 right">
-              <a href="Modelo/Session_destroy.php" class="red lighten-4 white-text tooltipped" data-position="left" data-tooltip="Cerrar sesion"><i class="medium material-icons right icono">input</i></a>
-            </div>
+          <div class="col l4 right-align">
+              <a class="waves-effect btn red lighten-4 black-text " href="Modelo/Session_destroy.php"><i class="material-icons left hide-on-med-and-down">input</i>Cerrar Sesion</a>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="container-fluid">
         <div class="row">
             <div class="col s12">
             <ul class="tabs">
@@ -87,4 +80,6 @@ if(!$_SESSION['logged']){
         </div>
     </div>
 </body>
+
+
 </html>

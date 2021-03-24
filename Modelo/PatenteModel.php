@@ -87,28 +87,23 @@ class PatenteModel extends conexion_DB{
     /**
      * METODO PARA ACTUALIZAR
      */
-    public function updatePatente($id, $nombre, $pais_presentacion ,$entidad_pequeña, $tipo, $aplicacion)
+    public function updatePatente($params)
     {
-        $id = $this->conn->real_escape_string($id);
-        $nombre = $this->conn->real_escape_string($nombre);
-        $pais_presentacion = $this->conn->real_escape_string($pais_presentacion);
-        $entidad_pequeña = $this->conn->real_escape_string($entidad_pequeña);
-        $tipo = $this->conn->real_escape_string($tipo);
-        $aplicacion = $this->conn->real_escape_string($aplicacion);
+        if(array_key_exists("id",$params)){
+            $id = $params["id"];
+            unset($params["id"]);
+        }
         $fecha_mod = date("Y-m-d H:i:s");
-        $sql = "UPDATE patentes SET 
-            nombre = '$nombre',
-            pais_presentacion = '$pais_presentacion',
-            entidad_pequeña = '$entidad_pequeña',
-            tipo = '$tipo',
-            aplicacion = '$aplicacion',
-            fecha_mod= '$fecha_mod',
-            WHERE id = '$id'";
+        $sql="UPDATE patentes SET ";
+        foreach ($params as $key => $value) {
+            $sql.="$key = '{$this->conn->real_escape_string($value)}',"; 
+        }
+        $sql .= "fecha_mod = '{$this->conn->real_escape_string($fecha_mod)}'";
+        $sql .= "WHERE id = {$this->conn->real_escape_string($id)}";
         $resultado = mysqli_query($this->conn,$sql) or die (mysqli_error($this->conn));
         if($resultado){
             return "Exito al actualizar el registro";
         }
     }
 }
-
 ?>

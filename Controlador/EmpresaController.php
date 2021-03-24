@@ -1,6 +1,12 @@
 <?php
 require "../Modelo/EmpresaModel.php";
-$flag = $_POST["flag"];
+if (array_key_exists("action",$_POST)){
+    $flag = 3;
+    unset($_POST["action"]);
+}
+else{
+    $flag = $_POST["flag"];
+}
 $empresa = new EmpresaModel();
 switch($flag){
     /**LISTADO DE Empresa*/
@@ -18,28 +24,7 @@ switch($flag){
     
         /**ACTUALIZA Empresa */
     case 3:
-        $id = $_POST["id"];
-        $nombre = $_POST["nombre"];
-        $nombre_rl = $_POST["nombre_rl"];
-        $direccion1_rl = $_POST["direccion1_rl"];
-        $direccion2_rl = $_POST["direccion2_rl"];
-        $email_rl = $_POST["email_rl"];
-        $telefono_rl = $_POST["telefono_rl"];
-        $nombre_sol = $_POST["nombre_sol"];
-        $email_sol = $_POST["email_sol"];
-        $telefono_sol = $_POST["telefono_sol"];
-        $resultado = $empresa->updateEmpresa(
-            $id,
-            $nombre, 
-            $nombre_rl, 
-            $direccion1_rl,
-            $direccion2_rl,
-            $email_rl,
-            $telefono_rl,
-            $nombre_sol,
-            $email_sol,
-            $telefono_sol
-        );
+        $resultado = $empresa->updateEmpresa($_POST);
         echo $resultado;
         break;
     

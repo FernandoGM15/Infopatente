@@ -30,27 +30,32 @@ $(function () {
                     return fecha.toLocaleDateString("es-ES", options)
                 }
             },
-            {defaultContent: 
-                    `
-                    <div class="row">
-                        <div class="col s12">
-                            <button class="btnEditarU light-green col s12 btn btn-warning dropdown-toggle" type="button" id="dropdown-actions" data-toggle="dropdown">
-                                Autorizar
-                            </button>
-                        </div>
-                        <div class="col s12">
-                            <button class="btnBorrarU light-blue lighten-1 col s12 btn btn-warning dropdown-toggle" type="button" id="dropdown-actions" data-toggle="dropdown">
-                                Editar
-                            </button>
-                        </div>
-                        <div class="col s12">
-                            <button class="btnBorrarU  red lighten-1 col s12 btn btn-warning dropdown-toggle" type="button" id="dropdown-actions" data-toggle="dropdown">
-                                Borrar
-                            </button>
-                        </div>
+            {"data":"id",
+            render:function(id){
+                return `
+                <div class="row">
+                    <div class="col s6">
+                        <a onclick='BorrarU(${id})' class="btnBorrarP red btn-small tooltipped" data-position="bottom" data-tooltip="Borrar">
+                            <i class="material-icons">delete</i>
+                        </a>
                     </div>
-                    `
+                </div>`
                 }
+            }
         ]
     })
+
+    //DATATABLE EDIT
+    $('#tabla-usuarios').on('draw.dt', function(){
+        $('#tabla-usuarios').Tabledit({
+            url: 'Controlador/UsuarioController.php',
+            editButton: false,
+            deleteButton: false,
+            hideIdentifier: true,
+            columns: {
+                identifier: [0, 'id'],
+                editable: [[5, 'email'],[6,'telefono']]
+            }
+        });
+    });
 });

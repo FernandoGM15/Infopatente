@@ -92,34 +92,19 @@ class UsuarioModel extends conexion_DB{
     /**
      * METODO PARA ACTUALIZAR
      */
-    public function updateUsuario($id, $tipo, $empresa, $num_identificacion, $nombre, $apellido_paterno, $apellido_materno, $email, $contraseña, $cp, $telefono)
+    public function updateUsuario($params)
     {
-        $id = $this->conn->real_escape_string($id);
-        $tipo = $this->conn->real_escape_string($tipo);
-        $empresa = $this->conn->real_escape_string($empresa);
-        $num_identificacion = $this->conn->real_escape_string($num_identificacion);
-        $nombre = $this->conn->real_escape_string($nombre);
-        $apellido_paterno = $this->conn->real_escape_string($apellido_paterno);
-        $apellido_materno = $this->conn->real_escape_string($apellido_materno);
-        $email = $this->conn->real_escape_string($email);
-        $contraseña = $this->conn->real_escape_string($contraseña);
-        $encryptPass = password_hash($contraseña, PASSWORD_DEFAULT);
-        $cp = $this->conn->real_escape_string($cp);
-        $telefono = $this->conn->real_escape_string($telefono);
+        if(array_key_exists("id",$params)){
+            $id = $params["id"];
+            unset($params["id"]);
+        }
         $fecha_mod = date("Y-m-d H:i:s");
-        $sql = "UPDATE usuarios SET 
-            tipo = '$tipo',
-            empresa = '$empresa',
-            num_identificacion = '$num_identificacion',
-            nombre = '$nombre',
-            apellido_paterno = '$apellido_paterno',
-            apellido_materno = '$apellido_materno',
-            email = '$email',
-            contraseña = '$encryptPass',
-            cp = $cp,
-            telefono = $telefono,
-            fecha_mod = '$fecha_mod'
-            WHERE id = $id";
+        $sql="UPDATE usuarios SET ";
+        foreach ($params as $key => $value) {
+            $sql.="$key = '{$this->conn->real_escape_string($value)}',"; 
+        }
+        $sql .= "fecha_mod = '{$this->conn->real_escape_string($fecha_mod)}'";
+        $sql .= "WHERE id = {$this->conn->real_escape_string($id)}";
         $resultado = mysqli_query($this->conn,$sql) or die (mysqli_error($this->conn));
         if($resultado){
             return "Exito al actualizar el registro";

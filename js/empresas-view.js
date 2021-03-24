@@ -15,11 +15,8 @@ $(function () {
             {"data":"id"},
             {"data":"nombre"},
             {"data":"nombre_rl"},
-            {"data": null,
-                render:function (data) {
-                    return `${data.direccion1_rl} ${data.direccion2_rl}`
-                }
-            },
+            {"data": "direccion1_rl"},
+            {"data":"direccion2_rl"},
             {"data":"email_rl"},
             {"data":"telefono_rl"},
             {"data":"fecha_mod",
@@ -29,26 +26,32 @@ $(function () {
                     return fecha.toLocaleDateString("es-ES", options)
                 }
             },
-            {defaultContent: 
-                    ` <div class="row">
-                    <div class="col s12">
-                        <button class="btnEditarE light-green col s12 btn btn-warning dropdown-toggle" type="button" id="dropdown-actions" data-toggle="dropdown">
-                            Autorizar
-                        </button>
-                    </div>
-                    <div class="col s12">
-                        <button class="btnBorrarE light-blue lighten-1 col s12 btn btn-warning dropdown-toggle" type="button" id="dropdown-actions" data-toggle="dropdown">
-                            Editar
-                        </button>
-                    </div>
-                    <div class="col s12">
-                        <button class="btnBorrarE  red lighten-1 col s12 btn btn-warning dropdown-toggle" type="button" id="dropdown-actions" data-toggle="dropdown">
-                            Borrar
-                        </button>
-                    </div>
-                </div>
-                    `
+            {"data":"id",
+                render:function(id){
+                    return `
+                    <div class="row">
+                        <div class="col s6">
+                            <a onclick='BorrarE(${id})' class="btnBorrarP red btn-small tooltipped" data-position="bottom" data-tooltip="Borrar">
+                                <i class="material-icons">delete</i>
+                            </a>
+                        </div>
+                    </div>`
                 }
+            }
         ]
     })
+
+    //DATATABLE EDIT
+    $('#tabla-empresas').on('draw.dt', function(){
+        $('#tabla-empresas').Tabledit({
+            url: 'Controlador/EmpresaController.php',
+            editButton: false,
+            deleteButton: false,
+            hideIdentifier: true,
+            columns: {
+                identifier: [0, 'id'],
+                editable: [[2,'nombre_rl'],[3,"direccion1_rl"],[4,"direccion2_rl"],[5,"email_rl"],[6,"telefono_rl"]]
+            }
+        });
+    });
 });

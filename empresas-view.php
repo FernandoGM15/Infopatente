@@ -14,7 +14,8 @@ if(!$_SESSION['logged']){
               <th>ID</th>
               <th>Nombre</th>
               <th>Representante legal</th>
-              <th>Direccion</th>
+              <th>Direccion 1</th>
+              <th>Direccion 2</th>
               <th>Correo (Representante legal)</th>
               <th>Telefono (Representante legal)</th>
               <th>Fecha Modificacion</th>

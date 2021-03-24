@@ -1,6 +1,12 @@
 <?php
 require "../Modelo/PatenteModel.php";
-$flag = $_POST["flag"];
+if (array_key_exists("action",$_POST)){
+    $flag = 3;
+    unset($_POST["action"]);
+}
+else{
+    $flag = $_POST["flag"];
+}
 $patente = new PatenteModel();
 switch($flag){
     /**LISTADO DE Patente*/
@@ -18,20 +24,7 @@ switch($flag){
     
         /**ACTUALIZA Patente */
     case 3:
-        $id = $_POST["id"];
-        $nombre = $_POST["nombre"];
-        $pais_presentacion = $_POST["pais_presentacion"];
-        $entidad_pequeña = $_POST["entidad_pequeña"];
-        $tipo = $_POST["tipo"];
-        $aplicacion = $_POST["aplicacion"];
-        $resultado = $patente->updatePatente(
-            $id,
-            $nombre,
-            $pais_presentacion,
-            $entidad_pequeña,
-            $tipo,
-            $aplicacion
-        );
+        $resultado = $patente->updatePatente($_POST);
         echo $resultado;
         break;
     

@@ -25,26 +25,40 @@ $(function () {
                     return fecha.toLocaleDateString("es-ES", options)
                 }
             },
-            {defaultContent: 
-                    ` <div class="row">
-                    <div class="col s12">
-                        <button class="btnEditarP light-green col s12 btn btn-warning dropdown-toggle" type="button" id="dropdown-actions" data-toggle="dropdown">
-                            Autorizar
-                        </button>
-                    </div>
-                    <div class="col s12">
-                        <button class="btnBorrarP light-blue lighten-1 col s12 btn btn-warning dropdown-toggle" type="button" id="dropdown-actions" data-toggle="dropdown">
-                            Editar
-                        </button>
-                    </div>
-                    <div class="col s12">
-                        <button class="btnBorrarP  red lighten-1 col s12 btn btn-warning dropdown-toggle" type="button" id="dropdown-actions" data-toggle="dropdown">
-                            Borrar
-                        </button>
-                    </div>
-                    </div>
-                    `
+            {"data":"id",
+                render:function(id){
+                   return `
+                    <div class="row">
+                        <div class="col s6">
+                            <a onclick='ActualizarP(${id})' class="btnAutorizarP light-green  btn-small tooltipped" data-position="bottom" data-tooltip="Autorizar">
+                                <i class="material-icons">check</i>
+                            </a>
+                        </div>
+                        <div class="col s6">
+                            <a onclick='BorrarP(${id})' class="btnBorrarP red btn-small tooltipped" data-position="bottom" data-tooltip="Borrar">
+                                <i class="material-icons">delete</i>
+                            </a>
+                        </div>
+                    </div>`
                 }
+            }
+            
         ]
     })
+
+    //DATATABLE EDIT
+    $('#tabla-patentes').on('draw.dt', function(){
+        $('#tabla-patentes').Tabledit({
+            url: 'Controlador/PatenteController.php',
+            editButton: false,
+            deleteButton: false,
+            hideIdentifier: true,
+            columns: {
+                identifier: [0, 'id'],
+                editable: [[1, 'nombre'],[2,'pais_presentacion']]
+            }
+        });
+    });
+
+    //FUNCIONES AUTORIZAR Y BORRAR REGISTRO
 });

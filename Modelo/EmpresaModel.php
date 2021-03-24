@@ -89,20 +89,19 @@ class EmpresaModel extends conexion_DB{
     /**
      * METODO PARA ACTUALIZAR
      */
-    public function updateEmpresa($id, $nombre, $nombre_rl, $direccion1_rl, $direccion2_rl, $email_rl, $telefono_rl, $nombre_sol, $email_sol, $telefono_sol)
+    public function updateEmpresa($params)
     {
-        $id = $this->conn->real_escape_string($id);
-        $nombre = $this->conn->real_escape_string($nombre);
-        $nombre_rl = $this->conn->real_escape_string($nombre_rl);
-        $direccion1_rl = $this->conn->real_escape_string($direccion1_rl);
-        $direccion2_rl = $this->conn->real_escape_string($direccion2_rl);
-        $email_rl = $this->conn->real_escape_string($email_rl);
-        $telefono_rl = $this->conn->real_escape_string($telefono_rl);
-        $nombre_sol = $this->conn->real_escape_string($nombre_sol);
-        $email_sol = $this->conn->real_escape_string($email_sol);
-        $telefono_sol = $this->conn->real_escape_string($telefono_sol);
+        if(array_key_exists("id",$params)){
+            $id = $params["id"];
+            unset($params["id"]);
+        }
         $fecha_mod = date("Y-m-d H:i:s");
-        $sql = "UPDATE empresas SET nombre = '$nombre',nombre_rl = '$nombre_rl',direccion1_rl = '$direccion1_rl',direccion2_rl = '$direccion2_rl',email_rl = '$email_rl',telefono_rl = $telefono_rl,nombre_sol = '$nombre_sol',email_sol = '$email_sol',telefono_sol = $telefono_sol WHERE id = '$id'";
+        $sql="UPDATE empresas SET ";
+        foreach ($params as $key => $value) {
+            $sql.="$key = '{$this->conn->real_escape_string($value)}',"; 
+        }
+        $sql .= "fecha_mod = '{$this->conn->real_escape_string($fecha_mod)}'";
+        $sql .= "WHERE id = {$this->conn->real_escape_string($id)}";
         $resultado = mysqli_query($this->conn,$sql) or die (mysqli_error($this->conn));
         if($resultado){
             return "Exito al actualizar el registro";

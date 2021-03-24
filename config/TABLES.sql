@@ -3,7 +3,7 @@
 -- Host: 127.0.0.1    Database: infopate_DB
 -- ------------------------------------------------------
 -- Server version	10.3.25-MariaDB-0ubuntu0.20.04.1
-
+use infopate_DB;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;

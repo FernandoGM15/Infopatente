@@ -1,6 +1,12 @@
 <?php
 require "../Modelo/UsuarioModel.php";
-$flag = $_POST["flag"];
+if (array_key_exists("action",$_POST)){
+    $flag = 3;
+    unset($_POST["action"]);
+}
+else{
+    $flag = $_POST["flag"];
+}
 $usuario = new UsuarioModel();
 switch($flag){
     /**LISTADO DE usuarioS */
@@ -18,29 +24,7 @@ switch($flag){
     
         /**ACTUALIZA usuario */
     case 3:
-        $id = $_POST["id"];
-        $tipo = $_POST["tipo"];
-        $empresa = $_POST["empresa"];
-        $num_identificacion = $_POST["num_identificacion"];
-        $nombre = $_POST["nombre"];
-        $apellido_paterno = $_POST["apellido_paterno"];
-        $apellido_materno = $_POST["apellido_materno"];
-        $email = $_POST["email"];
-        $contraseña = $_POST["contraseña"];
-        $cp = $_POST["cp"];
-        $telefono = $_POST["telefono"];
-        $resultado = $usuario->updateUsuario(
-            $id, 
-            $tipo, 
-            $empresa, 
-            $num_identificacion, 
-            $nombre, $apellido_paterno, 
-            $apellido_materno, 
-            $email, 
-            $contraseña, 
-            $cp, 
-            $telefono
-        );
+        $resultado = $usuario->updateUsuario($_POST);
         echo $resultado;
         break;
     

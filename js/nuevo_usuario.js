@@ -71,14 +71,20 @@ $(document).ready(function() {
         return false;  
       } 
       else{
+        let empresa = $("#nombre_empresa").val();
+        let numIdentificacion = $("#numero_identificacion").val();
+        if(!empresa && !numIdentificacion){
+          empresa = "NO APLICA";
+          numIdentificacion = "NO APLICA";
+        }
         $.ajax({
           type: "POST",
           url: "Controlador/UsuarioController.php",
           data: {
             "flag":4,
             "tipo": $("#tipo_de_usuario").val().toUpperCase(),
-            "empresa": $("#nombre_empresa").val().toUpperCase(),
-            "num_identificacion": $("#numero_identificacion").val(),
+            "empresa": empresa.toUpperCase(),
+            "num_identificacion": numIdentificacion,
             "nombre": $("#Nombre_usuario").val().toUpperCase(),
             "apellido_paterno": $("#ApPaterno_usuario").val().toUpperCase(),
             "apellido_materno": $("#ApMaterno_usuario").val().toUpperCase(),
