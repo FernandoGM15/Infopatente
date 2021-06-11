@@ -9,7 +9,7 @@ if(!$_SESSION['logged']){
       <span class="card-title center-align">Empresas Registradas</span>
       <div class="row">
         <div class="container-fluid">
-          <table style="width: 100%;" id="tabla-empresas">
+          <table class="responsive-table"style="width: 100%;" id="tabla-empresas">
             <thead>
               <th>ID</th>
               <th>Nombre</th>

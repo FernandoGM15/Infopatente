@@ -68,7 +68,7 @@ if(!$_SESSION['logged']){
         </div>
         <div class="row">
             <div class="col s12">
-            <ul class="tabs">
+            <ul class="tabs tabs-fixed-width ">
                 <li class="tab col s4"><a href="#patentes-tab">Patentes</a></li>
                 <li class="tab col s4"><a href="#empresas-tab">Empresas</a></li>
                 <li class="tab col s4"><a href="#usuarios-tab">Usuarios</a></li>
